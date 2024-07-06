@@ -43,13 +43,13 @@ To use VideoSequencer, you need an OpenAI API key. You can either specify the AP
 #### Processing a Folder of Videos
 
 ```bash
-python VideoSequencer.py --folder /path/to/videos --api-key YOUR_OPENAI_API_KEY --use-unix-timestamp --quadrant 2
+python main.py --folder /path/to/videos --api-key YOUR_OPENAI_API_KEY --use-unix-timestamp --quadrant 2
 ```
 
 #### Processing a Single Image
 
 ```bash
-python VideoSequencer.py --image /path/to/image.jpg --api-key YOUR_OPENAI_API_KEY --quadrant 1
+python main.py --image /path/to/image.jpg --api-key YOUR_OPENAI_API_KEY --quadrant 1
 ```
 
 #### Using API Key from File
@@ -57,5 +57,5 @@ python VideoSequencer.py --image /path/to/image.jpg --api-key YOUR_OPENAI_API_KE
 Save your OpenAI API key in a file named `.api_key` in the same directory as the script. Then run the script without specifying the `--api-key` argument:
 
 ```bash
-python VideoSequencer.py --folder /path/to/videos --use-unix-timestamp --quadrant 2
+python main.py --folder /path/to/videos --use-unix-timestamp --quadrant 2
 ```
