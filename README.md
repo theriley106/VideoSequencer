@@ -1,8 +1,6 @@
-### README
-
 # VideoSequencer
 
-VideoSequencer is a Python script designed to process video files and images, extract timestamps, and rename files based on these timestamps. It uses OpenAI's API for accurate timestamp extraction from video frames.
+VideoSequencer is a Python tool designed to process video files and images, extract timestamps, and rename files based on these timestamps. It uses OpenAI's API for accurate timestamp extraction from video frames.
 
 ## Features
 
