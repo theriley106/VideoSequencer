@@ -167,23 +167,10 @@ def process_videos_in_folder(folder_path, client, use_unix_timestamp, quadrant):
                 start_time, end_time = result
                 rename_video(video_path, start_time, end_time)
 
-def process_single_image(image_path, client, use_unix_timestamp, quadrant):
-    if not os.path.exists(image_path):
-        print(f"Error: Image file not found at {image_path}")
-        return None
-
-    base64_image = encode_image(image_path, quadrant)
-    timestamp = get_timestamp(client, base64_image)
-    if use_unix_timestamp and timestamp != "INVALID":
-        timestamp = to_unix_timestamp(timestamp)
-    return timestamp
-
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Process videos or images for timestamps.")
     parser.add_argument("--folder", type=str, help="Folder containing videos to process")
     parser.add_argument("--api-key", type=str, help="OpenAI API key")
-    parser.add_argument("--image", type=str, help="Single image file to process")
     parser.add_argument("--use-unix-timestamp", action="store_true", help="Use Unix timestamp format")
     parser.add_argument("--quadrant", type=int, choices=[1, 2, 3, 4], help="Quadrant for cropping (1: top left, 2: top right, 3: bottom left, 4: bottom right)")
 
@@ -198,9 +185,5 @@ if __name__ == "__main__":
 
     if args.folder:
         process_videos_in_folder(args.folder, client, args.use_unix_timestamp, args.quadrant)
-    elif args.image:
-        timestamp = process_single_image(args.image, client, args.use_unix_timestamp, args.quadrant)
-        if timestamp:
-            print(f"Timestamp for image {args.image}: {timestamp}")
     else:
-        print("Please provide either --folder or --image argument.")
+        print("Please provide a --folder argument.")

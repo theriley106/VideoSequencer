@@ -1,10 +1,10 @@
 # VideoSequencer
 
-VideoSequencer is a Python tool designed to process video files and images, extract timestamps, and rename files based on these timestamps. It uses OpenAI's API for accurate timestamp extraction from video frames.
+VideoSequencer is a Python tool designed to process video files, extract timestamps, and rename files based on these timestamps. It uses OpenAI's API for accurate timestamp extraction from video frames.
 
 ## Features
 
-- Extract timestamps from video frames and images
+- Extract timestamps from video frames
 - Rename video files based on extracted timestamps
 - Supports Unix timestamp formatting
 - Allows cropping images to specific quadrants for more accurate timestamp extraction
@@ -32,7 +32,6 @@ To use VideoSequencer, you need an OpenAI API key. You can either specify the AP
 
 - `--folder`: Folder containing videos to process.
 - `--api-key`: OpenAI API key.
-- `--image`: Single image file to process.
 - `--use-unix-timestamp`: Use Unix timestamp format (optional).
 - `--quadrant`: Quadrant for cropping (1: top left, 2: top right, 3: bottom left, 4: bottom right).
 
@@ -42,12 +41,6 @@ To use VideoSequencer, you need an OpenAI API key. You can either specify the AP
 
 ```bash
 python main.py --folder /path/to/videos --api-key YOUR_OPENAI_API_KEY --use-unix-timestamp --quadrant 2
-```
-
-#### Processing a Single Image
-
-```bash
-python main.py --image /path/to/image.jpg --api-key YOUR_OPENAI_API_KEY --quadrant 1
 ```
 
 #### Using API Key from File
